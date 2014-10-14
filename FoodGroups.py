@@ -1,5 +1,9 @@
+# For XML Element Tree manipulation
+import xml.etree.ElementTree as ET
+
 # FoodGroups object inspired by P90X
 class FoodGroups:
+
     # Other Properties shared for all objects (constant)
     groups = ['Fats','Carbs','Dairy','Fruit','Snacks','Proteins',
               'Condiments','Vegetables']
