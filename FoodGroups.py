@@ -48,3 +48,13 @@ class FoodGroups:
         return ET.tostring(self.xml)     
     # Initiate object with number (decimal or int)
     def __init__(self,fats=0,carbs=0,proteins=0,dairy=0,fruit=0,vegetables=0,
+                condiments=0,snacks=Snack()):
+        self.fats       = fats
+        self.carbs      = carbs 
+        self.dairy      = dairy
+        self.fruit      = fruit
+        self.snacks     = snacks     #object with four types (SGL,DBL,BAR,DRINK)
+        self.proteins   = proteins
+        self.condiments = condiments
+        self.vegetables = vegetables
+        self.xml        = self.__createXML() #XML representation of object
