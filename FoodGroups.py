@@ -58,3 +58,26 @@ class FoodGroups:
         self.condiments = condiments
         self.vegetables = vegetables
         self.xml        = self.__createXML() #XML representation of object
+        
+    # Create XML instance of the object
+    def __createXML(self):
+        foodGroups = ET.Element('foodGroups') #create root element
+        # Create subelements
+        fats       = ET.SubElement(foodGroups,'fats')
+        carbs      = ET.SubElement(foodGroups,'carbs')
+        dairy      = ET.SubElement(foodGroups,'dairy')
+        fruit      = ET.SubElement(foodGroups,'fruit')
+        snacks     = foodGroups.append(self.snacks.xml) #XML from Snack instance
+        proteins   = ET.SubElement(foodGroups,'proteins')
+        condiments = ET.SubElement(foodGroups,'condiments')
+        vegetables = ET.SubElement(foodGroups,'vegetables')
+        # Text within tag 
+        fats.text       = '%0.1f' %self.fats
+        carbs.text      = '%0.1f' %self.carbs
+        dairy.text      = '%0.1f' %self.dairy
+        fruit.text      = '%0.1f' %self.fruit
+        proteins.text   = '%0.1f' %self.proteins
+        condiments.text = '%0.1f' %self.condiments 
+        vegetables.text = '%0.1f' %self.vegetables
+        # Give XML instance
+
