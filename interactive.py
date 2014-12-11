@@ -7,6 +7,12 @@ welcomeMessage =  "Welcome to pyRecipeBook!\n"
 welcomeMessage += "Enter a command below:\n"
 print(welcomeMessage)
 
+#Method to run commands
+def runCommand(command):
+	if command.strip() == 'exit':
+		return False
+	else:
+		return True
 
 #
 pre = '# '
@@ -14,8 +20,11 @@ on = True
 
 #Keep asking for inpyt
 while(on):
-	command = input(pre)
+	#Enter a command
+	command = raw_input(pre)
 	#Run command
+	on = runCommand(command)
 
-#Exiting commands	
-"Thank you for choosing to use pyRecipeBook"
+#Exiting commands
+exitMessage = "\nThank you for choosing to use pyRecipeBook!\n"	
+print(exitMessage)
