@@ -10,6 +10,15 @@ print(welcomeMessage)
 
 myShoppingList = []
 
+#Method for `exit` command
+def exitCom(args):
+	#Predefined so args is never less than 1
+	#Too many arguements
+	if len(args) > 1:
+		return True
+	#Interactive mode should is not on
+	return False
+
 #Method to run commands
 def runCommand(command,myShoppingList=[1]):
 	#Split command
