@@ -29,7 +29,7 @@ def runCommand(command,myShoppingList=[1]):
 		return True
 	elif args[0] == 'exit': #Exit command
 		print('Exiting...')
-		return False
+		return exitCom(args)
 	elif args[0] == 'add': #Proceed to add what is given
 		#Test whether the arguements are valid
 		if len(args) == 1: #Not enough arguements
