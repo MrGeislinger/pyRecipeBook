@@ -20,7 +20,7 @@ def exitCom(args):
 	return False
 
 #Method to run commands
-def runCommand(command,myShoppingList=[1]):
+def runCommand(command,myShoppingList=[]):
 	#Split command
 	args = command.split()
 	
@@ -42,6 +42,14 @@ def runCommand(command,myShoppingList=[1]):
 			#Add to the shopping list
 			myShoppingList = addToList(*newArgs)
 		return True
+	elif args[0] == 'shoppingList': #Operate on the shopping list
+		#
+		if len(args) == 1: #Print the list
+			print myShoppingList
+		else: #Not valid arguments
+			print "Command not valid"
+		return True
+		
 	else: #Command isn't defined in this tool
 		print('That command doesn\'t exist.')
 		return True
