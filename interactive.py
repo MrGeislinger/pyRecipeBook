@@ -23,6 +23,18 @@ def exitCom(args):
 def printShoppingList(myList):
 	print myList
 
+#Method to initialize the shopping list from file
+def initShoppingList(filename=None):
+	myList = []
+	#Attempt to read file
+	try:
+    		content = open(filename, "r")
+    		#Convert file to usable list
+    	#Return an empty lisst
+	except FileNotFoundError:
+		#Hangle error
+	return myList
+
 #Method to run commands
 def runCommand(command,myShoppingList=[]):
 	#Split command
